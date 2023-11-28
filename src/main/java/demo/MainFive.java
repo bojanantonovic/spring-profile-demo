@@ -1,12 +1,14 @@
+package demo;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class MainMultiple {
+public class MainFive {
 
     public static void main(String[] args) {
-        System.setProperty("spring.profiles.active", "five,six");
+        System.setProperty("spring.profiles.active", "five");
 
         try (final var context = new AnnotationConfigApplicationContext(ConfigurationForNumbers.class)) {
-            // prints {returnFive=5, returnSix=6}
+            // prints 4 and 5
             System.out.println(context.getBeansOfType(Integer.class));
         }
     }

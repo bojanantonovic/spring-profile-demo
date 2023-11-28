@@ -1,3 +1,6 @@
+package demo_test;
+
+import demo.ConfigurationForNumbers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;

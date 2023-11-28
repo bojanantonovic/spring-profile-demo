@@ -1,12 +1,13 @@
+package demo;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class MainFive {
+public class MainDefault {
 
     public static void main(String[] args) {
-        System.setProperty("spring.profiles.active", "five");
-
         try (final var context = new AnnotationConfigApplicationContext(ConfigurationForNumbers.class)) {
-            // prints 5
+
+            // prints 4
             System.out.println(context.getBean(Integer.class));
         }
     }
