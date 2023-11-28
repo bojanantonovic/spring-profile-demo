@@ -3,20 +3,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import java.util.List;
+import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringJUnitConfig(ConfigurationForNumbers.class)
-@ActiveProfiles("five, six")
+@ActiveProfiles(profiles = {"five", "six"})
 class ProfileFiveAndSixIntegrationTest {
 
 	@Autowired
-	private List<Integer> values;
+	private Set<Integer> values;
 
 	@Test
 	void autowired_profileFiveAndSix_for() {
-		assertTrue(values.contains(5));
-		assertTrue(values.contains(6));
+		assertEquals(Set.of(4, 5, 6), values);
 	}
 }

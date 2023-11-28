@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Profile;
 public class ConfigurationForNumbers {
 
     @Bean
-    @Profile("default")
     public Integer returnFour() {
         return 4;
     }

@@ -3,14 +3,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+import java.util.Set;
+
 @SpringJUnitConfig(ConfigurationForNumbers.class)
 class ProfileDefaultIntegrationTest {
 
 	@Autowired
-	private int value;
+	private Set<Integer> values;
 
 	@Test
-	void autowired_defaultProfile_for() {
-		Assertions.assertEquals(4, value);
+	void autowired_defaultProfile_four() {
+		Assertions.assertEquals(Set.of(4), values);
 	}
 }

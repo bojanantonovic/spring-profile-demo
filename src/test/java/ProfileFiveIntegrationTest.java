@@ -1,19 +1,22 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringJUnitConfig(ConfigurationForNumbers.class)
 @ActiveProfiles("five")
 class ProfileFiveIntegrationTest {
 
 	@Autowired
-	private int value;
+	private Set<Integer> values;
 
 	@Test
-	void autowired_fiveProfile_for() {
-		Assertions.assertEquals(5, value);
+	void autowired_fiveProfile_fourAndFive() {
+		assertEquals(Set.of(4, 5), values);
 	}
 
 }
